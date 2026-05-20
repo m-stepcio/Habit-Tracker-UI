@@ -1,5 +1,5 @@
 import Habit from "./Habit"; 
-import { getHabits } from "../api";
+import { getHabits } from "../api/api";
 import { useState, useEffect } from "react";
 
 
@@ -28,13 +28,16 @@ useEffect(() => {
   loadHabitIntoList();
 }, []);
 
-    return <>
-        <h2>{props.title}</h2>
+    return <section className="habit-list-panel">
+        <div className="habit-list-header">
+          <h2>{props.title}</h2>
+        </div>
+        <div className="habit-list-grid">
         {habits.map(habit => (
       <Habit key={habit.id} {...habit} />
     ))}
-        
-    </>
+        </div>
+    </section>
 }
 
 export default HabitList;

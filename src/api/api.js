@@ -1,5 +1,6 @@
 const API_URL = "http://localhost:8080";
-const token = ""
+const token ="";
+
 export async function getHabits() {
   const response = await fetch(`${API_URL}/me/habits`,{
     method: "GET",

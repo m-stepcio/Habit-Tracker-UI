@@ -1,9 +1,21 @@
 function Habit(props){
     return <>
-    <h3>{props.name}</h3>
-    <div>Reward point: {props.points}</div>
-    <div>Days to master: {props.daysToMaster}</div>
-    <div>Creation date: {props.creationDate}</div>
+    <article className="habit-card">
+      <div className="habit-card-top">
+        <h3 className="habit-card-title">{props.name}</h3>
+        <span className="habit-card-badge">{props.points} pts</span>
+      </div>
+      <div className="habit-card-details">
+        <div className="habit-card-row">
+          <span className="habit-card-label">Days to master</span>
+          <span>{props.daysToMaster}</span>
+        </div>
+        <div className="habit-card-row">
+          <span className="habit-card-label">Created</span>
+          <span>{props.creationDate}</span>
+        </div>
+      </div>
+    </article>
     </>
 }
 
