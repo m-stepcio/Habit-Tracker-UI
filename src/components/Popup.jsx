@@ -5,7 +5,7 @@ import createHabit from "../api/createHabit";
 //  Integer points, LocalDate creationDate, Integer unlockCost, HabitStatus status,
 //                        Integer daysToMaster,Integer remainingDays)
 
-export default function Popup({ onClose }) {
+export default function Popup({ onClose, handleUpdate }) {
     const [formData, setFormData] = useState({
         habitName:"",
         description:"",
@@ -35,8 +35,10 @@ export default function Popup({ onClose }) {
 
         </form>
         <button className="popup-button popup-button-primary" type="button" onClick={() => {
-            createHabit(formData)}
-            }>
+            createHabit(formData, handleUpdate, onClose)
+            }
+        }
+            >
           Create
         </button>
         <button className="popup-button popup-button-secondary" type="button" onClick={onClose}>
